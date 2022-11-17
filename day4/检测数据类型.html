@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    数据检测类型的方法有四种:typeof,instanceof,constructor,Object.prototype.toString.call.
+</body>
+<script>
+// 1.typeof
+let num=123
+let str='123'
+let bool=true
+let arr=[]
+let obj={}
+let fn=function(){}
+let cla=class{}
+
+
+console.log(typeof num); // number
+console.log(typeof str); // string
+console.log(typeof bool); // boolean
+console.log(typeof null); // object
+console.log(typeof undefined); // undefined
+console.log(typeof arr); // object
+console.log(typeof Array); // function
+console.log(typeof obj); // object
+console.log(typeof Object); // function
+console.log(typeof fn); // function
+console.log(typeof cla); // function
+console.log(typeof aaaaa) // undefined
+// typeof 一般用于基本数据类型检测，引用数据类型检测只是返回各自的引用数据类型
+
+// 2.instanceof
+// instanceof 检测类型返回布尔值
+let num1 = 123
+let str1 = "123"
+let bool1 = true
+
+let arr1 = []
+let obj1 = {}
+let fn1 = function () { }
+let cla1 = class { }
+let number = new Number(12)
+
+
+
+
+console.log(number instanceof Number); // true
+console.log(num1 instanceof Number); // false
+console.log(str1 instanceof String); // false
+console.log(bool1 instanceof Boolean); // false
+console.log(null instanceof Object); // false
+console.log(undefined instanceof Object); // false
+console.log(arr1 instanceof Array); // true
+console.log(arr1 instanceof Object); // true
+console.log(obj1 instanceof Object); // true
+console.log(fn1 instanceof Function); // true
+console.log(fn1 instanceof Object); // true
+console.log(cla1 instanceof Function); // true
+console.log(cla1 instanceof Object); // true
+
+// 3.constructor  返回构造函数
+let num2 = 123
+let st2 = "123"
+let bool2 = true
+
+let arr2 = []
+let obj2 = {}
+let fn2 = function () { }
+let cla2 = class { }
+console.log(num.constructor);  
+console.log(str.constructor);  
+console.log(bool.constructor); 
+
+console.log(arr.constructor); 
+console.log(obj.constructor);  
+console.log(fn.constructor);  
+console.log(cla.constructor);  
+
+// 4.Object.prototype.toString.call() 返回的是[object 首字母大写的其他类型]
+let num3 = 123
+let str3 = "123"
+let bool3 = true
+
+let arr3 = []
+let obj3= {}
+let fn3 = function () { }
+let cla3 = class { }
+
+console.log(Object.prototype.toString.call(num3));
+console.log(Object.prototype.toString.call(str3));
+console.log(Object.prototype.toString.call(bool3));
+console.log(Object.prototype.toString.call(null));
+console.log(Object.prototype.toString.call(undefined));
+
+console.log(Object.prototype.toString.call(arr3));
+console.log(Object.prototype.toString.call(obj3));
+console.log(Object.prototype.toString.call(fn3));
+console.log(Object.prototype.toString.call(cla3));
+
+
+
+
+
+
+// 1.typeof
+// let num=123
+// let str='123'
+// let bool=true
+// let arr=[]
+// let obj={}
+// let fn=function(){}
+// let cla=class{}
+
+
+// console.log(typeof num); // number
+// console.log(typeof str); // string
+// console.log(typeof bool); // boolean
+// console.log(typeof null); // object
+// console.log(typeof undefined); // undefined
+// console.log(typeof arr); // object
+// console.log(typeof Array); // function
+// console.log(typeof obj); // object
+// console.log(typeof Object); // function
+// console.log(typeof fn); // function
+// console.log(typeof cla); // function
+// console.log(typeof aaaaa) // undefined
+// typeof 一般用于基本数据类型检测，引用数据类型检测只是返回各自的引用数据类型
+
+// 2.instanceof
+// instanceof 检测类型返回布尔值
+// let num1 = 123
+// let str1 = "123"
+// let bool1 = true
+
+// let arr1 = []
+// let obj1 = {}
+// let fn1 = function () { }
+// let cla1 = class { }
+// let number = new Number(12)
+
+
+
+
+// console.log(number instanceof Number); // true
+// console.log(num1 instanceof Number); // false
+// console.log(str1 instanceof String); // false
+// console.log(bool1 instanceof Boolean); // false
+// console.log(null instanceof Object); // false
+// console.log(undefined instanceof Object); // false
+// console.log(arr1 instanceof Array); // true
+// console.log(arr1 instanceof Object); // true
+// console.log(obj1 instanceof Object); // true
+// console.log(fn1 instanceof Function); // true
+// console.log(fn1 instanceof Object); // true
+// console.log(cla1 instanceof Function); // true
+// console.log(cla1 instanceof Object); // true
+
+// 3.constructor  返回构造函数
+// let num2 = 123
+// let st2 = "123"
+// let bool2 = true
+
+// let arr2 = []
+// let obj2 = {}
+// let fn2 = function () { }
+// let cla2 = class { }
+// console.log(num.constructor);  
+// console.log(str.constructor);  
+// console.log(bool.constructor); 
+
+// console.log(arr.constructor); 
+// console.log(obj.constructor);  
+// console.log(fn.constructor);  
+// console.log(cla.constructor);  
+
+// 4.Object.prototype.toString.call() 返回的是[object 首字母大写的其他类型]
+// let num3 = 123
+// let str3 = "123"
+// let bool3 = true
+
+// let arr3 = []
+// let obj3= {}
+// let fn3 = function () { }
+// let cla3 = class { }
+
+// console.log(Object.prototype.toString.call(num3));
+// console.log(Object.prototype.toString.call(str3));
+// console.log(Object.prototype.toString.call(bool3));
+// console.log(Object.prototype.toString.call(null));
+// console.log(Object.prototype.toString.call(undefined));
+
+// console.log(Object.prototype.toString.call(arr3));
+// console.log(Object.prototype.toString.call(obj3));
+// console.log(Object.prototype.toString.call(fn3));
+// console.log(Object.prototype.toString.call(cla3));
+
+
+  
+
+
+
+// 1.typeof
+// let num=123
+// let str='123'
+// let bool=true
+// let arr=[]
+// let obj={}
+// let fn=function(){}
+// let cla=class{}
+
+
+// console.log(typeof num); // number
+// console.log(typeof str); // string
+// console.log(typeof bool); // boolean
+// console.log(typeof null); // object
+// console.log(typeof undefined); // undefined
+// console.log(typeof arr); // object
+// console.log(typeof Array); // function
+// console.log(typeof obj); // object
+// console.log(typeof Object); // function
+// console.log(typeof fn); // function
+// console.log(typeof cla); // function
+// console.log(typeof aaaaa) // undefined
+// typeof 一般用于基本数据类型检测，引用数据类型检测只是返回各自的引用数据类型
+
+// 2.instanceof
+// instanceof 检测类型返回布尔值
+// let num1 = 123
+// let str1 = "123"
+// let bool1 = true
+
+// let arr1 = []
+// let obj1 = {}
+// let fn1 = function () { }
+// let cla1 = class { }
+// let number = new Number(12)
+
+
+
+
+// console.log(number instanceof Number); // true
+// console.log(num1 instanceof Number); // false
+// console.log(str1 instanceof String); // false
+// console.log(bool1 instanceof Boolean); // false
+// console.log(null instanceof Object); // false
+// console.log(undefined instanceof Object); // false
+// console.log(arr1 instanceof Array); // true
+// console.log(arr1 instanceof Object); // true
+// console.log(obj1 instanceof Object); // true
+// console.log(fn1 instanceof Function); // true
+// console.log(fn1 instanceof Object); // true
+// console.log(cla1 instanceof Function); // true
+// console.log(cla1 instanceof Object); // true
+
+// 3.constructor  返回构造函数
+// let num2 = 123
+// let st2 = "123"
+// let bool2 = true
+
+// let arr2 = []
+// let obj2 = {}
+// let fn2 = function () { }
+// let cla2 = class { }
+// console.log(num.constructor);  
+// console.log(str.constructor);  
+// console.log(bool.constructor); 
+
+// console.log(arr.constructor); 
+// console.log(obj.constructor);  
+// console.log(fn.constructor);  
+// console.log(cla.constructor);  
+
+// 4.Object.prototype.toString.call() 返回的是[object 首字母大写的其他类型]
+// let num3 = 123
+// let str3 = "123"
+// let bool3 = true
+
+// let arr3 = []
+// let obj3= {}
+// let fn3 = function () { }
+// let cla3 = class { }
+
+// console.log(Object.prototype.toString.call(num3));
+// console.log(Object.prototype.toString.call(str3));
+// console.log(Object.prototype.toString.call(bool3));
+// console.log(Object.prototype.toString.call(null));
+// console.log(Object.prototype.toString.call(undefined));
+
+// console.log(Object.prototype.toString.call(arr3));
+// console.log(Object.prototype.toString.call(obj3));
+// console.log(Object.prototype.toString.call(fn3));
+// console.log(Object.prototype.toString.call(cla3));
+</script>
+</html>
