@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    // 拓展运算符合并数组
+    // let arr1 = ["奇拉", "少卡"];
+    // let arr2 = ["舒克都", "放假"];
+    // let arr = [...arr1, ...arr2];
+    // console.log(arr);
+
+    // 克隆
+    // let str1 = ["奇拉", "少卡"];
+    // let str2 = ["舒克都", "放假"];
+    // let str = [...str1, ...str2];
+    // console.log(str);
+    // let arr3 = [...str2];
+    // console.log(str3);
+
+    // 伪数组转换为真数组
+    let obj = {
+        '0': 'zero',
+        '1': 'one',
+        '2': 'two',
+        '3': 'three',
+        'length': 4,
+        [Symbol.iterator]: Array.prototype[Symbol.iterator]
+    };
+   
+    const divs = document.querySelectorAll('div');
+    console.log(divs instanceof Array);
+    const arr = [...divs];
+    console.log(arr instanceof Array);
+
+
+    _________________________________________
+
+
+        // 拓展运算符合并数组
+    // let arr1 = ["奇拉", "少卡"];
+    // let arr2 = ["舒克都", "放假"];
+    // let arr = [...arr1, ...arr2];
+    // console.log(arr);
+
+    // 克隆
+    // let str1 = ["奇拉", "少卡"];
+    // let str2 = ["舒克都", "放假"];
+    // let str = [...str1, ...str2];
+    // console.log(str);
+    // let arr3 = [...str2];
+    // console.log(str3);
+
+    // 伪数组转换为真数组
+    // let obj = {
+    //     '0': 'zero',
+    //     '1': 'one',
+    //     '2': 'two',
+    //     '3': 'three',
+    //     'length': 4,
+    //     [Symbol.iterator]: Array.prototype[Symbol.iterator]
+    // };
+   
+    // const divs = document.querySelectorAll('div');
+    // console.log(divs instanceof Array);
+    // const arr = [...divs];
+    // console.log(arr instanceof Array);
+
+
+
+    ___________________________________
+
+         // 拓展运算符合并数组
+    // let arr1 = ["奇拉", "少卡"];
+    // let arr2 = ["舒克都", "放假"];
+    // let arr = [...arr1, ...arr2];
+    // console.log(arr);
+
+    // 克隆
+    // let str1 = ["奇拉", "少卡"];
+    // let str2 = ["舒克都", "放假"];
+    // let str = [...str1, ...str2];
+    // console.log(str);
+    // let arr3 = [...str2];
+    // console.log(str3);
+
+    // 伪数组转换为真数组
+    // let obj = {
+    //     '0': 'zero',
+    //     '1': 'one',
+    //     '2': 'two',
+    //     '3': 'three',
+    //     'length': 4,
+    //     [Symbol.iterator]: Array.prototype[Symbol.iterator]
+    // };
+   
+    // const divs = document.querySelectorAll('div');
+    // console.log(divs instanceof Array);
+    // const arr = [...divs];
+    // console.log(arr instanceof Array);
+
+
+
+
+</script>
+
+</html>

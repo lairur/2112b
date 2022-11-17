@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    // 數組解構
+    const F4 = ['孙悟空', '沙和尚', '唐僧', '猪八戒']
+    let [sun, sha, tang, zhu] = F4
+    console.log(sun)
+    console.log(sha)
+    console.log(tang)
+    console.log(zhu)
+
+
+    // 对象的解构
+    const baigujing = {
+        name: '白骨精',
+        age: 30,
+        jineng: function () {
+            console.log("三打白骨精")
+        }
+    }
+    let { name, age, jineng } = baigujing
+    console.log(name)
+    console.log(age)
+    console.log(jineng)
+    jineng()
+
+
+
+    // 连续解构
+    let obj = { a: { b: 1 } }
+    const { a } = obj;
+    const { a: { b } } = obj;
+    const { a: { b: value } } = obj; 
+
+
+
+
+
+    _________________________________________________
+
+
+
+      // 數組解構
+    //   const F4 = ['孙悟空', '沙和尚', '唐僧', '猪八戒']
+    // let [sun, sha, tang, zhu] = F4
+    // console.log(sun)
+    // console.log(sha)
+    // console.log(tang)
+    // console.log(zhu)
+
+
+    // 对象的解构
+    // const baigujing = {
+    //     name: '白骨精',
+    //     age: 30,
+    //     jineng: function () {
+    //         console.log("三打白骨精")
+    //     }
+    // }
+    // let { name, age, jineng } = baigujing
+    // console.log(name)
+    // console.log(age)
+    // console.log(jineng)
+    // jineng()
+
+
+
+    // 连续解构
+    // let obj = { a: { b: 1 } }
+    // const { a } = obj;
+    // const { a: { b } } = obj;
+    // const { a: { b: value } } = obj; 
+
+
+    _________________________________________________
+
+    // 數組解構
+    //   const F4 = ['孙悟空', '沙和尚', '唐僧', '猪八戒']
+    // let [sun, sha, tang, zhu] = F4
+    // console.log(sun)
+    // console.log(sha)
+    // console.log(tang)
+    // console.log(zhu)
+
+
+    // 对象的解构
+    // const baigujing = {
+    //     name: '白骨精',
+    //     age: 30,
+    //     jineng: function () {
+    //         console.log("三打白骨精")
+    //     }
+    // }
+    // let { name, age, jineng } = baigujing
+    // console.log(name)
+    // console.log(age)
+    // console.log(jineng)
+    // jineng()
+
+
+
+    // 连续解构
+    // let obj = { a: { b: 1 } }
+    // const { a } = obj;
+    // const { a: { b } } = obj;
+    // const { a: { b: value } } = obj;
+
+
+
+
+</script>
+
+</html>
