@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>this指向</title>
+</head>
+<body>
+    
+
+
+
+</body>
+<script>
+    // 1作为普通函数时候this指向window
+//     function one(){
+//         console.log(this);
+//     }
+// one()
+
+// 2.作为对象的属性被调用时，谁调用this就指向谁。
+// var obj = {
+//     a: 'yuguang',
+//     getName: function(){
+//         console.log(this === obj);
+//         console.log(this.a);
+//     }
+// };
+
+// obj.getName(); // true yuguang
+//3 被构造函数调用的时候，this指向返回的构造函数的实例。
+
+// var MyClass = function(){
+//     this.name = 'yuguang';
+// }
+// var obj = new MyClass();
+// obj.name; // yuguang
+
+// var MyClass = function () {
+//     this.name = 1;
+//     return {
+//         name: 2
+//     }
+// }
+// var myClass = new MyClass(); 
+// console.log('myClass:', myClass); // { name: 2}
+
+
+// 4.箭头函数本身没有this指向，他的this指向永远指向他的父级。
+// this.val = 2;
+// var obj = {
+//     val: 1,
+//     getVal: () => {
+//         console.log(this.val);
+//     }
+// }
+
+// obj.getVal(); // 2
+
+// call和apply 都可以改变this指向。
+// var obj = {
+//   name: "obj"
+// }
+// foo.call(obj)
+// foo.apply(obj)
+// foo.apply("aaaa")
+
+
+// 2.call和apply有什么区别?
+// function sum(num1, num2, num3) {
+//   console.log(num1 + num2 + num3, this)
+// }
+
+// sum.call("call", 20, 30, 40)
+// sum.apply("apply", [20, 30, 40])
+
+
+
+
+________________________________________
+
+
+    // 1作为普通函数时候this指向window
+//     function one(){
+//         console.log(this);
+//     }
+// one()
+
+// 2.作为对象的属性被调用时，谁调用this就指向谁。
+// var obj = {
+//     a: 'yuguang',
+//     getName: function(){
+//         console.log(this === obj);
+//         console.log(this.a);
+//     }
+// };
+
+// obj.getName(); // true yuguang
+//3 被构造函数调用的时候，this指向返回的构造函数的实例。
+
+// var MyClass = function(){
+//     this.name = 'yuguang';
+// }
+// var obj = new MyClass();
+// obj.name; // yuguang
+
+// var MyClass = function () {
+//     this.name = 1;
+//     return {
+//         name: 2
+//     }
+// }
+// var myClass = new MyClass(); 
+// console.log('myClass:', myClass); // { name: 2}
+
+
+// 4.箭头函数本身没有this指向，他的this指向永远指向他的父级。
+// this.val = 2;
+// var obj = {
+//     val: 1,
+//     getVal: () => {
+//         console.log(this.val);
+//     }
+// }
+
+// obj.getVal(); // 2
+
+// call和apply 都可以改变this指向。
+// var obj = {
+//   name: "obj"
+// }
+// foo.call(obj)
+// foo.apply(obj)
+// foo.apply("aaaa")
+
+
+// 2.call和apply有什么区别?
+// function sum(num1, num2, num3) {
+//   console.log(num1 + num2 + num3, this)
+// }
+
+// sum.call("call", 20, 30, 40)
+// sum.apply("apply", [20, 30, 40])
+
+
+
+______________________________________________
+
+
+
+
+//     1作为普通函数时候this指向window
+//     function one(){
+//         console.log(this);
+//     }
+// one()
+
+// 2.作为对象的属性被调用时，谁调用this就指向谁。
+// var obj = {
+//     a: 'yuguang',
+//     getName: function(){
+//         console.log(this === obj);
+//         console.log(this.a);
+//     }
+// };
+
+// obj.getName(); // true yuguang
+// 3 被构造函数调用的时候，this指向返回的构造函数的实例。
+
+// var MyClass = function(){
+//     this.name = 'yuguang';
+// }
+// var obj = new MyClass();
+// obj.name; // yuguang
+
+// var MyClass = function () {
+//     this.name = 1;
+//     return {
+//         name: 2
+//     }
+// }
+// var myClass = new MyClass(); 
+// console.log('myClass:', myClass); // { name: 2}
+
+
+// 4.箭头函数本身没有this指向，他的this指向永远指向他的父级。
+// this.val = 2;
+// var obj = {
+//     val: 1,
+//     getVal: () => {
+//         console.log(this.val);
+//     }
+// }
+
+// obj.getVal(); // 2
+
+// call和apply 都可以改变this指向。
+// var obj = {
+//   name: "obj"
+// }
+// foo.call(obj)
+// foo.apply(obj)
+// foo.apply("aaaa")
+
+
+// 2.call和apply有什么区别?
+// function sum(num1, num2, num3) {
+//   console.log(num1 + num2 + num3, this)
+// }
+
+// sum.call("call", 20, 30, 40)
+// sum.apply("apply", [20, 30, 40])
+
+
+
+
+
+</script>
+</html>

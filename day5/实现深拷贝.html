@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    // let obj1={
+    // name:"嫦娥",
+    // age:1000,
+    // sing:{
+    //     name:'安静',
+    //     level:'好听',
+    // },
+
+    // };
+
+    // function deepClone(obj){
+    //     if(obj==null) return obj;
+    //     if(obj instanceof Date)return new Date();
+    //     if(obj instanceof RegExp)return obj;
+    //     if(typeof obj !=='object')return obj;
+
+
+    //     let res=new obj.constructor();
+    //     for(key in obj){
+    //         res[key]=deepClone(obj[key]);
+    //     }
+    //     console.log(res);
+    //     return res;
+    // }
+    // let obj2=deepClone(obj1);
+    // obj2.name='白骨精';
+    // obj2.sing.name='有一个妖精';
+    // console.log(obj1,obj2);
+
+    ___________________________________________
+
+
+    // 2.
+    // let obj1={
+    // name:"嫦娥",
+    // age:1000,
+    // sing:{
+    //     name:'安静',
+    //     level:'好听',
+    // },
+
+    // };
+
+    // function deepClone(obj){
+    //     if(obj==null) return obj;
+    //     if(obj instanceof Date)return new Date();
+    //     if(obj instanceof RegExp)return obj;
+    //     if(typeof obj !=='object')return obj;
+
+
+    //     let res=new obj.constructor();
+    //     for(key in obj){
+    //         res[key]=deepClone(obj[key]);
+    //     }
+    //     console.log(res);
+    //     return res;
+    // }
+    // let obj2=deepClone(obj1);
+    // obj2.name='白骨精';
+    // obj2.sing.name='有一个妖精';
+    // console.log(obj1,obj2);
+
+
+    _____________________________________________
+
+    // 3
+    let obj1={
+    name:"王卓",
+    sing:{
+        name:'安静',
+        level:'不知道',
+    },
+
+    };
+
+    function deepClone(obj){
+        if(obj==null) return obj;
+        if(obj instanceof Date)return new Date();
+        if(obj instanceof RegExp)return obj;
+        if(typeof obj !=='object')return obj;
+
+
+        let res=new obj.constructor();
+        for(key in obj){
+            res[key]=deepClone(obj[key]);
+        }
+        console.log(res);
+        return res;
+    }
+    let obj2=deepClone(obj1);
+    obj2.name='害怕了';
+    obj2.sing.name='谁呀';
+    console.log(obj1,obj2);
+
+
+</script>
+</html>

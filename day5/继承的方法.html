@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    // 1.原型的继承
+    // function Super() { this.a = [1, 2] }
+    // function Sub() { }
+    // Sub.prototype = new Super()
+
+    // const test1 = new Sub()
+    // test1.a.push(3)
+    // console.log(test1.a)// [1,2,3]
+    // const test2 = new Sub()
+    // console.log(test2.a)// [1,2,3]
+
+
+    // 2 盗用构造函数
+    // function SuperType() {
+    //     this.colors = ['red', 'blue', 'green'];
+    // }
+
+
+    // function SubType() {
+    //     //继承superType
+    //     SuperType.call(this);  //盗用构造函数
+    // }
+
+    // let obj1 = new SuperType();
+    // obj1.colors.push('black');
+    // console.log(obj1.colors); //[ 'red', 'blue', 'green', 'black' ] 
+
+    // let obj2 = new SubType();
+    // console.log(obj2.colors); //[ 'red', 'blue', 'green']
+
+
+    // 3 组合式继承
+    // function Super() { this.a = [1, 2] }
+    // Super.prototype.say = function () { console.log(‘hhh’) }
+    // function Sub() {
+    //     Super.call(this)
+    //     this b = 2
+    // }
+    // Sub.prototype = new Super()
+
+    // const test1 = new Sub()
+    // console.log(test1.say())// hhh
+    // test1.a.push(3)
+    // console.log(test1.a)// [1,2,3]
+    // const test2 = new Sub()
+    // console.log(test2.a)// [1,2]
+
+    // 4、原型式继承
+    // es5之前
+    // const obj = { a: 1 }
+    // function createObj(o) {
+    //     const Fn(){ }
+    //     Fn.prototype = o
+    //     return new Fn()
+    // }
+
+    // const test = createObj(obj)
+    // es5之后
+    // const obj = { a: 1 }
+
+    // const test = Object.create(obj)
+
+    // 5、寄生式继承
+    // let parent5 = {
+    //     name: 'parent5',
+    //     friends: ['p1', 'p2', 'p3'],
+    //     getName: function () {
+    //         return this.name
+    //     },
+    // }
+
+    // function clone(original) {
+    //     let clone = Object.create(original)
+    //     clone.getFriends = function () {
+    //         return this.friends
+    //     }
+    //     return clone
+    // }
+
+    // let person = clone(parent5)
+
+    // console.log(person.getName())
+    // console.log(person.getFriends())
+
+    // 6.寄生式组合继承
+    // function Cat(name) {
+    //     Animal.call(this);
+    //     this.name = name || 'Tom';
+    // }
+    // (function () {
+    //     var Super = function () { };  //创建一个没有实例的方法类。
+    //     Super.prototype = Animal.prototype;
+    //     Cat.prototype = new Super();  //将实例作为子类的原型。
+    // })();
+
+    // let cat = new Cat();
+    // console.log(cat.name);		//Tom
+    // cat.sleep();		//Tom正在睡觉
+    // console.log(cat instanceof Animal); // true
+    // console.log(cat instanceof Cat); //true
+
+    // Cat.prototype.constructor = Cat;	//修复构造函数
+
+
+    _______________________________________________________
+
+
+    // 1.原型的继承
+    // function Super() { this.a = [1, 2] }
+    // function Sub() { }
+    // Sub.prototype = new Super()
+
+    // const test1 = new Sub()
+    // test1.a.push(3)
+    // console.log(test1.a)// [1,2,3]
+    // const test2 = new Sub()
+    // console.log(test2.a)// [1,2,3]
+
+
+    // 2 盗用构造函数
+    // function SuperType() {
+    //     this.colors = ['red', 'blue', 'green'];
+    // }
+
+
+    // function SubType() {
+    //     //继承superType
+    //     SuperType.call(this);  //盗用构造函数
+    // }
+
+    // let obj1 = new SuperType();
+    // obj1.colors.push('black');
+    // console.log(obj1.colors); //[ 'red', 'blue', 'green', 'black' ] 
+
+    // let obj2 = new SubType();
+    // console.log(obj2.colors); //[ 'red', 'blue', 'green']
+
+
+    // 3 组合式继承
+    // function Super() { this.a = [1, 2] }
+    // Super.prototype.say = function () { console.log(‘hhh’) }
+    // function Sub() {
+    //     Super.call(this)
+    //     this b = 2
+    // }
+    // Sub.prototype = new Super()
+
+    // const test1 = new Sub()
+    // console.log(test1.say())// hhh
+    // test1.a.push(3)
+    // console.log(test1.a)// [1,2,3]
+    // const test2 = new Sub()
+    // console.log(test2.a)// [1,2]
+
+    // 4、原型式继承
+    // es5之前
+    // const obj = { a: 1 }
+    // function createObj(o) {
+    //     const Fn(){ }
+    //     Fn.prototype = o
+    //     return new Fn()
+    // }
+
+    // const test = createObj(obj)
+    // es5之后
+    // const obj = { a: 1 }
+
+    // const test = Object.create(obj)
+
+    // 5、寄生式继承
+    // let parent5 = {
+    //     name: 'parent5',
+    //     friends: ['p1', 'p2', 'p3'],
+    //     getName: function () {
+    //         return this.name
+    //     },
+    // }
+
+    // function clone(original) {
+    //     let clone = Object.create(original)
+    //     clone.getFriends = function () {
+    //         return this.friends
+    //     }
+    //     return clone
+    // }
+
+    // let person = clone(parent5)
+
+    // console.log(person.getName())
+    // console.log(person.getFriends())
+
+    // 6.寄生式组合继承
+    // function Cat(name) {
+    //     Animal.call(this);
+    //     this.name = name || 'Tom';
+    // }
+    // (function () {
+    //     var Super = function () { };  //创建一个没有实例的方法类。
+    //     Super.prototype = Animal.prototype;
+    //     Cat.prototype = new Super();  //将实例作为子类的原型。
+    // })();
+
+    // let cat = new Cat();
+    // console.log(cat.name);		//Tom
+    // cat.sleep();		//Tom正在睡觉
+    // console.log(cat instanceof Animal); // true
+    // console.log(cat instanceof Cat); //true
+
+    // Cat.prototype.constructor = Cat;	//修复构造函数
+
+
+
+
+    _________________________________________________________________
+
+
+
+
+    
+        // 1.原型的继承
+    // function Super() { this.a = [1, 2] }
+    // function Sub() { }
+    // Sub.prototype = new Super()
+
+    // const test1 = new Sub()
+    // test1.a.push(3)
+    // console.log(test1.a)// [1,2,3]
+    // const test2 = new Sub()
+    // console.log(test2.a)// [1,2,3]
+
+
+    // 2 盗用构造函数
+    // function SuperType() {
+    //     this.colors = ['red', 'blue', 'green'];
+    // }
+
+
+    // function SubType() {
+    //     //继承superType
+    //     SuperType.call(this);  //盗用构造函数
+    // }
+
+    // let obj1 = new SuperType();
+    // obj1.colors.push('black');
+    // console.log(obj1.colors); //[ 'red', 'blue', 'green', 'black' ] 
+
+    // let obj2 = new SubType();
+    // console.log(obj2.colors); //[ 'red', 'blue', 'green']
+
+
+    // 3 组合式继承
+    // function Super() { this.a = [1, 2] }
+    // Super.prototype.say = function () { console.log(‘hhh’) }
+    // function Sub() {
+    //     Super.call(this)
+    //     this b = 2
+    // }
+    // Sub.prototype = new Super()
+
+    // const test1 = new Sub()
+    // console.log(test1.say())// hhh
+    // test1.a.push(3)
+    // console.log(test1.a)// [1,2,3]
+    // const test2 = new Sub()
+    // console.log(test2.a)// [1,2]
+
+    // 4、原型式继承
+    // es5之前
+    // const obj = { a: 1 }
+    // function createObj(o) {
+    //     const Fn(){ }
+    //     Fn.prototype = o
+    //     return new Fn()
+    // }
+
+    // const test = createObj(obj)
+    // es5之后
+    // const obj = { a: 1 }
+
+    // const test = Object.create(obj)
+
+    // 5、寄生式继承
+    // let parent5 = {
+    //     name: 'parent5',
+    //     friends: ['p1', 'p2', 'p3'],
+    //     getName: function () {
+    //         return this.name
+    //     },
+    // }
+
+    // function clone(original) {
+    //     let clone = Object.create(original)
+    //     clone.getFriends = function () {
+    //         return this.friends
+    //     }
+    //     return clone
+    // }
+
+    // let person = clone(parent5)
+
+    // console.log(person.getName())
+    // console.log(person.getFriends())
+
+    // 6.寄生式组合继承
+    // function Cat(name) {
+    //     Animal.call(this);
+    //     this.name = name || 'Tom';
+    // }
+    // (function () {
+    //     var Super = function () { };  //创建一个没有实例的方法类。
+    //     Super.prototype = Animal.prototype;
+    //     Cat.prototype = new Super();  //将实例作为子类的原型。
+    // })();
+
+    // let cat = new Cat();
+    // console.log(cat.name);		//Tom
+    // cat.sleep();		//Tom正在睡觉
+    // console.log(cat instanceof Animal); // true
+    // console.log(cat instanceof Cat); //true
+
+    // Cat.prototype.constructor = Cat;	//修复构造函数
+
+</script>
+
+</html>
