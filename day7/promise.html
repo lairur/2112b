@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+</body>
+<script>
+    // 实例化promise 对象
+
+    // const p=new Promise(function(resolve,reject){
+    //     setTimeout(function(){
+    //         let data='我要休息了'
+    //         resolve(data)
+    //     })
+    // })
+
+    // p.then(res=>{
+    //     console.log(res,'成功的回调');
+    // }).catch(err=>{
+    //     console.log(err,'失败的回调');
+
+    // })
+
+
+    // 简写
+    // 成功的回调
+    // p.then(()=>{
+
+    // },()=>{
+    //     // s失败的回调
+    // })
+
+
+
+
+
+
+
+
+    // 调用 promise 对象的 then 方法
+
+    // p.then(
+    //     function(value){
+    //         console.log(value);
+    //     },
+    //     function(reason){
+    //         console.log(reason);
+    //     }
+    // )
+    // 
+
+
+    // 使用promise 封装
+    // const p=new Promise(function(resolve,reject){
+    //     fs.redFile('../day1',(err,data)=>{
+    //         if((err)reject(err));
+    //         resolve(data)
+    //     })
+    // })
+
+    // p.then(function(value){
+    //     console.log(value.toString());
+    // },function(function(reason)=>{
+    //     console.log('读取失败');
+    // }))
+
+
+    // 实例化promise函数
+
+//     const p = new Promise((resolve, reject) => {
+//         var xhr = new XMLHttpRequest()
+
+//         xhr.open("GET", "https//api.apioen.top/getJ");
+//         xhr.send
+//         xhr.onreadystatechange = function () {
+//             if (xhr.readyState === 4) {
+//                 if (xhr.status > 200 && xhr.status < 300) {
+//                     resolve(xhr.response)
+//                 } else {
+//                     reject(xhr.response)
+//                 }
+//             }
+//         }
+//     })
+// p.then((res)=>{
+//     console.log(res);
+// },
+// (err)=>{
+//     console.log(err);
+// })
+
+// 调用then方法 then方法的返回结果是一个promise对象，对象状态由回调函数的执行结果决定的
+
+// const result=p.then(value=>{
+//     console.log(value);
+//     return 'iloveyou'
+//     return new Promise((resolve,reject)=>{
+//         reject('error')
+//     })
+// },reson=>{
+//     console.log(reason);
+// })
+
+
+// // 链式调用
+// p.then(value=>{
+
+// }).then(value=>{
+
+// }).then()
+
+
+
+______________________________________
+
+
+  // 实例化promise 对象
+
+    // const p=new Promise(function(resolve,reject){
+    //     setTimeout(function(){
+    //         let data='我要休息了'
+    //         resolve(data)
+    //     })
+    // })
+
+    // p.then(res=>{
+    //     console.log(res,'成功的回调');
+    // }).catch(err=>{
+    //     console.log(err,'失败的回调');
+
+    // })
+
+
+    // 简写
+    // 成功的回调
+    // p.then(()=>{
+
+    // },()=>{
+    //     // s失败的回调
+    // })
+
+
+
+
+
+
+
+
+    // 调用 promise 对象的 then 方法
+
+    // p.then(
+    //     function(value){
+    //         console.log(value);
+    //     },
+    //     function(reason){
+    //         console.log(reason);
+    //     }
+    // )
+    // 
+
+
+    // 使用promise 封装
+    // const p=new Promise(function(resolve,reject){
+    //     fs.redFile('../day1',(err,data)=>{
+    //         if((err)reject(err));
+    //         resolve(data)
+    //     })
+    // })
+
+    // p.then(function(value){
+    //     console.log(value.toString());
+    // },function(function(reason)=>{
+    //     console.log('读取失败');
+    // }))
+
+
+    // 实例化promise函数
+
+//     const p = new Promise((resolve, reject) => {
+//         var xhr = new XMLHttpRequest()
+
+//         xhr.open("GET", "https//api.apioen.top/getJ");
+//         xhr.send
+//         xhr.onreadystatechange = function () {
+//             if (xhr.readyState === 4) {
+//                 if (xhr.status > 200 && xhr.status < 300) {
+//                     resolve(xhr.response)
+//                 } else {
+//                     reject(xhr.response)
+//                 }
+//             }
+//         }
+//     })
+// p.then((res)=>{
+//     console.log(res);
+// },
+// (err)=>{
+//     console.log(err);
+// })
+
+// 调用then方法 then方法的返回结果是一个promise对象，对象状态由回调函数的执行结果决定的
+
+// const result=p.then(value=>{
+//     console.log(value);
+//     return 'iloveyou'
+//     return new Promise((resolve,reject)=>{
+//         reject('error')
+//     })
+// },reson=>{
+//     console.log(reason);
+// })
+
+
+// // 链式调用
+// p.then(value=>{
+
+// }).then(value=>{
+
+// }).then()
+
+
+
+
+__________________________________________________
+
+
+
+  // 实例化promise 对象
+
+    // const p=new Promise(function(resolve,reject){
+    //     setTimeout(function(){
+    //         let data='我要休息了'
+    //         resolve(data)
+    //     })
+    // })
+
+    // p.then(res=>{
+    //     console.log(res,'成功的回调');
+    // }).catch(err=>{
+    //     console.log(err,'失败的回调');
+
+    // })
+
+
+    // 简写
+    // 成功的回调
+    // p.then(()=>{
+
+    // },()=>{
+    //     // s失败的回调
+    // })
+
+
+
+
+
+
+
+
+    // 调用 promise 对象的 then 方法
+
+    // p.then(
+    //     function(value){
+    //         console.log(value);
+    //     },
+    //     function(reason){
+    //         console.log(reason);
+    //     }
+    // )
+    // 
+
+
+    // 使用promise 封装
+    // const p=new Promise(function(resolve,reject){
+    //     fs.redFile('../day1',(err,data)=>{
+    //         if((err)reject(err));
+    //         resolve(data)
+    //     })
+    // })
+
+    // p.then(function(value){
+    //     console.log(value.toString());
+    // },function(function(reason)=>{
+    //     console.log('读取失败');
+    // }))
+
+
+    // 实例化promise函数
+
+//     const p = new Promise((resolve, reject) => {
+//         var xhr = new XMLHttpRequest()
+
+//         xhr.open("GET", "https//api.apioen.top/getJ");
+//         xhr.send
+//         xhr.onreadystatechange = function () {
+//             if (xhr.readyState === 4) {
+//                 if (xhr.status > 200 && xhr.status < 300) {
+//                     resolve(xhr.response)
+//                 } else {
+//                     reject(xhr.response)
+//                 }
+//             }
+//         }
+//     })
+// p.then((res)=>{
+//     console.log(res);
+// },
+// (err)=>{
+//     console.log(err);
+// })
+
+// 调用then方法 then方法的返回结果是一个promise对象，对象状态由回调函数的执行结果决定的
+
+// const result=p.then(value=>{
+//     console.log(value);
+//     return 'iloveyou'
+//     return new Promise((resolve,reject)=>{
+//         reject('error')
+//     })
+// },reson=>{
+//     console.log(reason);
+// })
+
+
+// // 链式调用
+// p.then(value=>{
+
+// }).then(value=>{
+
+// }).then()
+
+
+</script>
+
+</html>
