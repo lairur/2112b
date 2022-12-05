@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>todo</title>
+    <style>
+@import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:400,700,300);
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Yanone Kaffeesatz", sans-serif !important;
+}
+
+div {
+  box-sizing: border-box;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+html {
+  height: 100%;
+  background-image: linear-gradient(90deg, #ffafbd, #ffc3a0);
+  background-repeat: no-repeat;
+}
+
+body {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.wrapper {
+  width: 440px;
+  padding: 30px 40px 20px;
+  background-color: #f2f2f2;
+  border-radius: 15px;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80px;
+}
+
+.img {
+  width: 80px;
+  height: 80px;
+  margin-right: 10px;
+}
+
+.title {
+  box-sizing: border-box;
+  text-align: center;
+  line-height: 38px;
+  width: 97px;
+  height: 45px;
+  font-size: 21px;
+  background: #fe7345;
+  padding: 6px 17px 4px;
+  color: #fff;
+  font-size: 21px;
+  transform: rotate(3deg);
+  border-radius: 20% 5% 20% 5%/5% 20% 25% 20%;
+}
+
+.filed {
+  margin-top: 25px;
+}
+
+h1 {
+  width: 360px;
+  height: 33px;
+  color: #494a4b;
+  margin: 0 0 18px;
+  font-size: 22px;
+  text-align: center;
+}
+
+.form {
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.form-input input {
+  box-sizing: border-box;
+  width: 237px;
+  height: 30px;
+  padding: 5px 0 3px;
+  font-size: 18px;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  margin-right: 15px;
+  border-bottom: 3px dashed #fe7345;
+}
+
+.submit {
+  position: relative;
+  transform: rotate(4deg);
+  outline: none;
+  border: none;
+  border-radius: 6px;
+  transition: transform 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.submit:before {
+  position: absolute;
+  left: 0;
+  top: 0;
+  content: "";
+  width: 100%;
+  background-color: transparent;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  height: 100%;
+  transform: scaleY(1.1);
+  border: 1px solid #494a4b;
+  border-radius: inherit;
+  transform-origin: top;
+  background-image: url(data:image/png;base64,R0lGODlhBAAEAIABAAAAAAAAACH/C1hNUCBEYXRhWE1QPD94cGFja2V0IGJlZ2luPSLvu78iIGlkPSJXNU0wTXBDZWhpSHpyZVN6TlRjemtjOWQiPz4gPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iQWRvYmUgWE1QIENvcmUgNS4wLWMwNjEgNjQuMTQwOTQ5LCAyMDEwLzEyLzA3LTEwOjU3OjAxICAgICAgICAiPiA8cmRmOlJERiB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiPiA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtbG5zOnhtcE1NPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvbW0vIiB4bWxuczpzdFJlZj0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL3NUeXBlL1Jlc291cmNlUmVmIyIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1LjEgV2luZG93cyIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDo5NUY1OENCRDdDMDYxMUUyOTEzMEE1MEM5QzM0NDVBMyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDo5NUY1OENCRTdDMDYxMUUyOTEzMEE1MEM5QzM0NDVBMyI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjk1RjU4Q0JCN0MwNjExRTI5MTMwQTUwQzlDMzQ0NUEzIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjk1RjU4Q0JDN0MwNjExRTI5MTMwQTUwQzlDMzQ0NUEzIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+Af/+/fz7+vn49/b19PPy8fDv7u3s6+rp6Ofm5eTj4uHg397d3Nva2djX1tXU09LR0M/OzczLysnIx8bFxMPCwcC/vr28u7q5uLe2tbSzsrGwr66trKuqqainpqWko6KhoJ+enZybmpmYl5aVlJOSkZCPjo2Mi4qJiIeGhYSDgoGAf359fHt6eXh3dnV0c3JxcG9ubWxramloZ2ZlZGNiYWBfXl1cW1pZWFdWVVRTUlFQT05NTEtKSUhHRkVEQ0JBQD8+PTw7Ojk4NzY1NDMyMTAvLi0sKyopKCcmJSQjIiEgHx4dHBsaGRgXFhUUExIREA8ODQwLCgkIBwYFBAMCAQAAIfkEAQAAAQAsAAAAAAQABAAAAgYEEpdoeQUAOw==);
+  background-color: #fe7345;
+  transition: transform 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.submit span {
+  position: relative;
+  display: block;
+  font-size: 16.5px;
+  padding: 6px 14px;
+  border: 2px solid #494a4b;
+  /* outline: none;
+    border: none; */
+  background-color: transparent;
+  cursor: pointer;
+  border-radius: inherit;
+  background-color: #fff;
+}
+
+.todos {
+  margin-top: 40px;
+  perspective: 350px;
+}
+
+.todos-item {
+  display: flex !important;
+  align-items: center;
+  padding: 8px 10px 8px 4px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+.completed {
+  display: flex !important;
+  align-items: center;
+  padding: 8px 10px 8px 4px;
+  border-radius: 5px;
+  cursor: pointer;
+  transform: rotateX(180deg);
+  transition: all 1s;
+  margin-bottom: 10px;
+  background-color: #fe7345;
+  -webkit-animation: flipInX-132cabf7 .75s ease-in-out both;
+  animation: flipInX-132cabf7 .75s ease-in-out both;
+}
+
+.completed input {
+  color: #fff !important;
+  transform: rotateX(180deg);
+  transition: all .8s;
+  background-color: #fe7345 !important;
+}
+
+.completed p {
+  text-decoration: line-through;
+  color: #fff;
+  transform: rotateX(180deg);
+  transition: all 1s;
+}
+
+.completed button {
+  color: #fff;
+}
+
+.content {
+  color: #000;
+}
+
+.check-btn {
+  padding: 0 8px;
+  margin: 0 6px;
+}
+
+.close-btn {
+  margin: 0 -8px 0 auto;
+  padding: 0 8px;
+  outline: none;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  font-size: 18px;
+  color: #000;
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 30px;
+  gap: 10px;
+  /* -webkit-animation: zoom-132cabf7 .45s ease-in-out;
+    animation: zoom-132cabf7 .45s ease-in-out; */
+}
+
+.msg {
+  font-size: 17px;
+  padding-top: 5px;
+  color: rgba(73, 74, 75, 0.45);
+}
+
+.footer-img {
+  display: inline-block;
+  box-sizing: border-box;
+  width: 30px !important;
+  padding-top: 3px;
+  height: 26px;
+  position: relative;
+}
+
+.footer-img img {
+  width: 22px !important;
+  height: 26px !important;
+  position: absolute;
+  left: 5px;
+  top: 0;
+}
+
+.activemin {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 100px;
+  display: none;
+}
+
+.activemin span {
+  padding: 0 4px;
+  border-radius: 4px;
+  transition: all 60ms ease-out;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.no {
+  display: none !important;
+}
+
+.no1 {
+  display: none !important;
+}
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <header>
+            <div class="img">
+                <img src="./img/note.75134fb0.svg" alt="">
+            </div>
+            <div class="title">
+                To-Do List
+            </div>
+        </header>
+        <div class="filed">
+            <h1>~ Today I need to ~</h1>
+            <div class="form">
+                <div class="form-input">
+                    <input type="text" placeholder="Add new todo..." class="ipt">
+                </div>
+                <button type="submit" class="submit"><span>Submit</span></button>
+            </div>
+        </div>
+        <ul class="todos">
+            <!-- <li class="todos-item">
+                <input type="checkbox" class="check-btn">
+                <p class="content">1</p>
+                <button class="close-btn">x</button>
+            </li>
+            <li class="todos-item completed">
+                <input type="checkbox" class="check-btn">
+                <p class="content">2</p>
+                <button class="close-btn">x</button>
+            </li> -->
+        </ul>
+        <ul class="todos1"></ul>
+        <ul class="todos2"></ul>
+        <div class="activemin">
+            <span><span class="first"></span>item left</span>
+            <span style="background-color: #fe7345; color:#fff;">All</span>
+            <span style="display: none;">Acitve</span>
+            <span style="display: none;">Completed</span>
+            <span style="display: none;">Clear completed</span>
+        </div>
+        <div class="footer">
+            <span class="footer-img">
+                <img src="./1669454402133.jpg" alt="">
+            </span>
+            <span class="msg">Congrat, you have no more tasks to do</span>
+        </div>
+    </div>
+</body>
+<script>
+    var taskInput = document.querySelector('.ipt') //输入框
+    var activemin = document.querySelector('.activemin') //底部按钮
+    var footer = document.querySelector('.footer') //显示提示
+    var todos = document.querySelector('.todos') //ul
+    var todos1 = document.querySelector('.todos1') //ul
+    var todos2 = document.querySelector('.todos2') //ul
+    var submit = document.querySelector('.submit') //按钮添加
+    var all = document.querySelector(".activemin span:nth-of-type(2)"); //所有任务
+    var task = document.querySelector(".activemin span:nth-of-type(3)"); //已完成
+    var untask = document.querySelector(".activemin span:nth-of-type(4)"); //未完成
+    var clear = document.querySelector(".activemin span:nth-of-type(5)"); //未完成
+    var first = document.querySelector(".first")
+    // 回车键添加
+    taskInput.onkeydown = function (e) {
+        if (e.keyCode === 13) {
+            add()
+        }
+    }
+    // 添加封装
+    function add() {
+        if (taskInput.value == '' || taskInput.value == " ") {
+            return
+        } else {
+            var li = document.createElement('li');
+            li.innerHTML = ` <input type="checkbox" class="check-btn">
+                <p class="content">${taskInput.value}</p>
+                <button class="close-btn">x</button>`
+            li.className = 'todos-item'
+            todos.appendChild(li)
+            taskInput.value = ''
+            activemin.style.display = "block";
+            activemin.style.display = "flex";
+            footer.style.display = "none";
+            first.innerHTML = todos.children.length
+        }
+
+    }
+    // 添加按钮动画
+    submit.onclick = function () {
+        submit.style.transform = 'rotate(0deg)' //归零
+        setTimeout(function () { //定时器完成动画
+            submit.style.transition = 'transform .25s cubic-bezier(.175,.885,.32,1.275)'
+        }, 1000)
+        setTimeout(function () { //变回原来的样子
+            submit.style.transform = 'rotate(7deg)'
+        }, 100)
+        add() //调用封装函数
+    }
+    // 状态切换
+    todos.onclick = function (e) {
+        if (e.target.parentNode.className == 'todos-item') {
+            e.target.parentNode.className = 'completed'
+            task.style.display = 'block'
+            untask.style.display = 'block'
+            clear.style.display = 'block'
+            var lis = document.querySelectorAll('li')
+            var num = document.querySelectorAll('.completed').length
+            if (num == lis.length) {
+                task.style.display = 'none'
+                untask.style.display = 'none'
+                clear.style.display = 'block'
+            }
+        } else {
+            e.target.parentNode.className = 'todos-item'
+            var lis = document.querySelectorAll('li')
+            for (var i = 0; i < lis.length; i++) {
+                if (lis[i].className == 'completed') {
+                    task.style.display = 'block'
+                    untask.style.display = 'block'
+                    clear.style.display = 'block'
+
+                    return
+                } else {
+                    task.style.display = 'none'
+                    untask.style.display = 'none'
+                    clear.style.display = 'none'
+                }
+            }
+        }
+        // 删除
+        if (e.target.className == 'close-btn') {
+            e.target.parentNode.remove()
+            first.innerHTML = todos.children.length
+        }
+    }
+    // 批量删除
+    clear.onclick = function () {
+        var li = document.querySelectorAll('li')
+        console.log(li[0].className);
+        for (var i = 0; i < li.length; i++) {
+            if (li[i].className == 'completed') {
+                console.log(li[i].className);
+                li[i].remove()
+            }
+        }
+        task.style.display = "none";
+        untask.style.display = "none";
+        clear.style.display = "none";
+    }
+
+    task.onclick = function () {
+        var ons = document.querySelectorAll('.on1')
+        console.log(ons);
+        for (let i = 0; i < ons.length; i++) {
+            ons[i].className = 'todos-item'
+        }
+        var show = document.querySelectorAll(".completed")
+        for (let i = 0; i < show.length; i++) {
+            show[i].className = "no";
+            all.style.backgroundColor = ''
+            all.style.color = '#000'
+            untask.style.backgroundColor = ''
+            untask.style.color = '#000'
+            clear.style.backgroundColor = ''
+            clear.style.color = '#000'
+            task.style.color = "#fff"
+            task.style.backgroundColor = '#fe7345'
+        }
+        var flag = document.querySelectorAll(".todos-item")
+        for (let i = 0; i < flag.length; i++) {
+            flag[i].style.display = "block";
+            flag[i].className = 'todos-item'
+        }
+
+
+    }
+    untask.onclick = function () {
+        var ons = document.querySelectorAll('.on')
+        console.log(ons);
+        for (let i = 0; i < ons.length; i++) {
+            ons[i].className = 'completed'
+        }
+        var show = document.querySelectorAll(".todos-item")
+        console.log(show);
+        for (let i = 0; i < show.length; i++) {
+            show[i].className = "no1";
+            all.style.backgroundColor = ''
+            all.style.color = '#000'
+            untask.style.backgroundColor = '#fe7345'
+            untask.style.color = '#fff'
+            clear.style.backgroundColor = ''
+            clear.style.color = '#000'
+            task.style.color = "#000"
+            task.style.backgroundColor = ''
+        }
+        var flag = document.querySelectorAll(".completed")
+        for (let i = 0; i < flag.length; i++) {
+            flag[i].style.display = "block";
+            flag[i].className = 'completed'
+        }
+    }
+    all.onclick = function () {
+        var lis = document.querySelectorAll('li')
+        console.log(lis);
+        all.style.backgroundColor = '#fe7345'
+        all.style.color = '#fff'
+        untask.style.backgroundColor = ''
+        untask.style.color = ''
+        clear.style.backgroundColor = ''
+        clear.style.color = '#000'
+        task.style.color = "#000"
+        task.style.backgroundColor = ''
+        for (let i = 0; i < lis.length; i++) {
+            if (lis[i].className == 'no') {
+                lis[i].className = 'completed'
+            }
+            if (lis[i].className == 'no1') {
+                lis[i].className = 'todos-item'
+            }
+            lis[i].style.display = "block";
+
+        }
+        add()
+    }
+</script>
+
+</html>
