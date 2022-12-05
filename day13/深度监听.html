@@ -1,0 +1,118 @@
+<<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../js/vue.js"></script>
+</head>
+<body>
+    <div id="add">
+       <h3>a的值是：{{numbers.a}}</h3>
+       <button @click="numbers.a++">点我让a+1</button>
+       <h3>b的值是：{{numbers.b}}</h3>
+       <button @click="numbers.b++">点我让b+1</button>
+       <button @click="numbers={{a:666,b:888}}">彻底替换掉number</button>
+       <h3>e的值是：{{numbers.c.d.e}}</h3>
+       <button @click="numbers.c.d.e++">点我让e+1</button>
+        
+    </div>
+</body>
+<script>
+    // new Vue({
+    //     el:'#add',
+    //     data:{
+    //        nnumbers:{
+    //         a:1,
+    //         b:1,
+    //         c:{
+    //             d:{
+    //                 e:100
+    //             }
+    //         }
+    //        }
+    //     },
+    //     watch:{
+    //        numbers:{
+    //         deep:true,
+    //         handler(newValue,oldValue){
+    //             console.log(newValue,'newValue');
+    //             console.log(newValue,'newValue');
+    //             console.log('numbers改变了');
+    //         }
+    //        }
+    //     }
+      
+        
+    // })
+
+
+
+    // _______________________________________
+
+
+    // new Vue({
+    //     el:'#add',
+    //     data:{
+    //        nnumbers:{
+    //         a:1,
+    //         b:1,
+    //         c:{
+    //             d:{
+    //                 e:100
+    //             }
+    //         }
+    //        }
+    //     },
+    //     watch:{
+    //        numbers:{
+    //         deep:true,
+    //         handler(newValue,oldValue){
+    //             console.log(newValue,'newValue');
+    //             console.log(newValue,'newValue');
+    //             console.log('numbers改变了');
+    //         }
+    //        }
+    //     }
+      
+        
+    // })
+
+
+    // __________________________________________________
+
+
+
+
+    new Vue({
+        el:'#add',
+        data:{
+           nnumbers:{
+            a:1,
+            b:1,
+            c:{
+                d:{
+                    e:100
+                }
+            }
+           }
+        },
+        watch:{
+           numbers:{
+            deep:true,
+            handler(newValue,oldValue){
+                console.log(newValue,'newValue');
+                console.log(newValue,'newValue');
+                console.log('numbers改变了');
+            }
+           }
+        }
+      
+        
+    })
+
+
+
+</script>
+</html>

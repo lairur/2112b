@@ -1,0 +1,96 @@
+<<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../js/vue.js"></script>
+</head>
+<body>
+    <div id="add">
+        <div>姓：<input type="text" v-model="fristName"></div>
+        <div>名：<input type="text" v-model="lastName"></div>
+        <div>全名：<input type="text"  v-model="fullName" @input="handleChangeInput"></div>
+        <div>{{fullName()}}</div>
+        <div>{{fullName()}}</div>
+        <div>{{fullName()}}</div>
+        <div>{{fullName()}}</div>
+    </div>
+</body>
+<script>
+    // new Vue({
+    //     el:'#add',
+    //     data:{
+    //         fristName:'韩',
+    //         lastName:'雨泽',
+    //     },
+    //     methods:{
+    //         handleFullName(){
+    //             console.log('我是函数调用');
+    //             this.fullName=this.fristName+'-'+this.lastName
+    //             return this.fristName+'-'+this.lastName
+    //         },
+    //         handleChangeInput(){
+    //             let result=this.fullName.split('-')
+    //             this.fristName=result[0],
+    //             this.lastName=result[1]
+    //         }
+    //     }
+        
+    // })
+
+
+
+
+    // ————————————————————————————————————————————————————————————————————
+
+
+
+    // new Vue({
+    //     el:'#add',
+    //     data:{
+    //         fristName:'韩',
+    //         lastName:'雨泽',
+    //     },
+    //     methods:{
+    //         handleFullName(){
+    //             console.log('我是函数调用');
+    //             this.fullName=this.fristName+'-'+this.lastName
+    //             return this.fristName+'-'+this.lastName
+    //         },
+    //         handleChangeInput(){
+    //             let result=this.fullName.split('-')
+    //             this.fristName=result[0],
+    //             this.lastName=result[1]
+    //         }
+    //     }
+        
+    // })
+
+
+
+    // ————————————————————————————————————————————————————————
+    // new Vue({
+    //     el:'#add',
+    //     data:{
+    //         fristName:'韩',
+    //         lastName:'雨泽',
+    //     },
+    //     methods:{
+    //         handleFullName(){
+    //             console.log('我是函数调用');
+    //             this.fullName=this.fristName+'-'+this.lastName
+    //             return this.fristName+'-'+this.lastName
+    //         },
+    //         handleChangeInput(){
+    //             let result=this.fullName.split('-')
+    //             this.fristName=result[0],
+    //             this.lastName=result[1]
+    //         }
+    //     }
+        
+    // })
+
+</script>
+</html>
